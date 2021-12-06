@@ -1,3 +1,22 @@
 .example-spacer {
     flex: 1 1 auto;
 }
+
+.example-icon {
+    padding: 0 20px;
+}
+
+.menuSection {
+    padding: 2px;
+    margin: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    font-family: Proxima Nova,sans-serif;
+}
+
+.menu-button-text {
+    font-weight: 400;
+    font-size: 1.05rem;
+}

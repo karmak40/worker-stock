@@ -1,22 +1,39 @@
-<p>
-    <mat-toolbar>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-            <mat-icon>menu</mat-icon>
-        </button>
+<mat-toolbar>
 
-        <span>
-            <a class="logo" rel="home" href="/">
-                <img width="101" height="36" alt="Funda"
-                    src="https://assets.fstatic.nl/master_3777/assets/components/logo/fundawonen-logo.svg">
-            </a>
-        </span>
+    <span>
+        <a rel="home" href="/">
+            <img width="101" height="36" alt="Funda"
+                src="https://assets.fstatic.nl/master_3777/assets/components/logo/fundawonen-logo.svg">
+        </a>
+    </span>
 
-        <span class="example-spacer"></span>
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-            <mat-icon>favorite</mat-icon>
-        </button>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-            <mat-icon>share</mat-icon>
-        </button>
-    </mat-toolbar>
-</p>
+    <span class="example-spacer"></span>
+
+    <button mat-button class="example-icon favorite-icon" [matMenuTriggerFor]="mainMenu" aria-label="Example icon-button with heart icon">
+        <mat-icon>menu</mat-icon> Menu
+    </button>
+    <mat-menu #mainMenu="matMenu">
+        <div class="menuSection">Dienstleistung anbieten </div>
+        <button mat-menu-item class="menu-button-text">select 1</button>
+        <button mat-menu-item class="menu-button-text">select 2</button>
+        <button mat-menu-item class="menu-button-text">select 3</button>
+        <div class="menuSection">Dienstleistung finden </div>
+        <button mat-menu-item class="menu-button-text">select 4</button>
+        <button mat-menu-item class="menu-button-text">select 5</button>
+    </mat-menu>
+
+    <button mat-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>login</mat-icon> Log in
+    </button>
+
+    <button mat-button class="example-icon favorite-icon" [matMenuTriggerFor]="langMenu"
+        aria-label="Example icon-button with share icon">
+        <mat-icon>language</mat-icon> {{language}}
+    </button>
+
+    <mat-menu #langMenu="matMenu">
+        <button mat-menu-item class="menu-button-text" (click)="selectLanguage('EN')">English</button>
+        <button mat-menu-item class="menu-button-text" (click)="selectLanguage('DE')">Deutsch</button>
+    </mat-menu>
+
+</mat-toolbar>

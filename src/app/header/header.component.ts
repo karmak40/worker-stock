@@ -7,9 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  language: string = "EN";
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  selectLanguage(lang: string) {
+    switch (lang) {
+      case "DE":
+        this.language = "DE";
+        break;
+      case "EN":
+        this.language = "EN";
+        break;
+      default:
+        this.language = "DE";
+        break;
+    }
   }
 
 }
